@@ -51,7 +51,6 @@ export const RssProvider = ({ children }) => {
 					contents: promise.items, //items es un array de objetos
 				}]
 			})
-			//console.log(promise.items)
 		})
 		.catch(response => {
 			console.log(response.status, response.statusText)
@@ -59,7 +58,6 @@ export const RssProvider = ({ children }) => {
     }
 
 	function deleteFeeds(id) {
-		//console.log("id")
 		setFeeds(prevFeeds => {
 			console.log(prevFeeds.filter(feed => feed.id !== id))
 			return prevFeeds.filter(feed => feed.id !== id)
@@ -68,10 +66,6 @@ export const RssProvider = ({ children }) => {
 			return prevContents.filter(content => content.id = id)
 		})
 	}
-
-	/* function deleteAllFeeds(id) {
-		setFeeds(prevFeeds => [])
-	} */
 
 	return (
 		<RssContext.Provider value={{

@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom'
 import { useFeeds } from '../Contexts/RssContexts'
 
 
-//Nombres de la variables de almacenamiento local
-export const LOCAL_STORAGE_KEY = 'feedsApp.feeds'
-export const LOCAL_STORAGE_KEY_CONTENTS = 'feedsApp.contents'
 
 
 
@@ -49,25 +46,27 @@ export default function Home() {
 
 	return (
 	<>
-		<h1>Feeds RSS</h1>
-		{feeds.length > 0? feeds.map(feed => {
-			return (
-				<Card style={{ width: '18rem' }}>
-					<Card.Body>
-						<Card.Title>
-							<Link to={`/rss/${feed.id}`}>{feed.title}</Link>
-						</Card.Title>
-						<Button
-							onClick={() => handleDelete(feed.id)} 
-							variant="danger">Borrar 🗑</Button>
-					</Card.Body>
-				</Card>
-			)
-		}) :"" }
-		<div className='create'>
-			<input ref={feedsRef} type="text" placeholder="Introduzca un link" />
-			<Button onClick={handleAddFeed}>Añadir Feed RSS</Button>
-			<Button onClick={handleInitialValue}>Valores iniciales α</Button>
+		<div className='content'>
+			<h1>Feeds RSS</h1>
+			{feeds.length > 0? feeds.map(feed => {
+				return (
+					<Card style={{ width: '18rem' }}>
+						<Card.Body>
+							<Card.Title>
+								<Link to={`/rss/${feed.id}`}>{feed.title}</Link>
+							</Card.Title>
+							<Button
+								onClick={() => handleDelete(feed.id)} 
+								variant="danger">Borrar 🗑</Button>
+						</Card.Body>
+					</Card>
+				)
+			}) :"" }
+			<div className='create'>
+				<input ref={feedsRef} type="text" placeholder="Introduzca un link" />
+				<Button onClick={handleAddFeed}>Añadir Feed RSS</Button>
+				<Button onClick={handleInitialValue}>Valores iniciales</Button>
+			</div>
 		</div>
     </>
 	)
