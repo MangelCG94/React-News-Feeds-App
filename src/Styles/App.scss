@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+@import "~bootstrap/scss/bootstrap";
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: black;
+
+  &:visited,
+  &:active {
+    color: grey;
+  }
+
+  &:hover {
+    color: grey;
+  }
+}

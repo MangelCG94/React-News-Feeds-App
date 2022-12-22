@@ -46,11 +46,11 @@ export default function Home() {
 
 	return (
 	<>
-		<div className='content cards'>
+		<div className='content'>
 			<h1>Feeds RSS</h1>
+			<div className='cards'>
 			{feeds.length > 0? feeds.map(feed => {
 				return (
-					<div className='card'>
 						<Card style={{ width: '18rem' }}>
 							<Card.Body>
 								<Card.Title>
@@ -61,9 +61,9 @@ export default function Home() {
 									variant="danger">Borrar 🗑</Button>
 							</Card.Body>
 						</Card>
-					</div>
 				)
 			}) :"" }
+			</div>
 			<div className='create'>
 				<input ref={feedsRef} type="text" placeholder="Introduzca un link" />
 				<Button onClick={handleAddFeed}>Añadir Feed RSS</Button>
