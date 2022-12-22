@@ -20,7 +20,7 @@ export default function Rss() {
 
 
 	return (
-		<div>
+		<div className='content news'>
 			<h2>{ currentFeed.title }</h2>
 			{
 				items.map(item => {

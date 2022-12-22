@@ -46,20 +46,22 @@ export default function Home() {
 
 	return (
 	<>
-		<div className='content'>
+		<div className='content cards'>
 			<h1>Feeds RSS</h1>
 			{feeds.length > 0? feeds.map(feed => {
 				return (
-					<Card style={{ width: '18rem' }}>
-						<Card.Body>
-							<Card.Title>
-								<Link to={`/rss/${feed.id}`}>{feed.title}</Link>
-							</Card.Title>
-							<Button
-								onClick={() => handleDelete(feed.id)} 
-								variant="danger">Borrar 🗑</Button>
-						</Card.Body>
-					</Card>
+					<div className='card'>
+						<Card style={{ width: '18rem' }}>
+							<Card.Body>
+								<Card.Title>
+									<Link to={`/rss/${feed.id}`}>{feed.title}</Link>
+								</Card.Title>
+								<Button
+									onClick={() => handleDelete(feed.id)} 
+									variant="danger">Borrar 🗑</Button>
+							</Card.Body>
+						</Card>
+					</div>
 				)
 			}) :"" }
 			<div className='create'>

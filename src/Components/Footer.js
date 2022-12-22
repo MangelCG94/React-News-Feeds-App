@@ -12,6 +12,5 @@ export default function Footer() {
 			</Navbar.Text>
 		</Container>
 	</Navbar>
-	
   )
 }

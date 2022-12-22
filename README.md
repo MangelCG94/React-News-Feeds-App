@@ -27,3 +27,7 @@ To use this project you would need to follow these steps:
 - Clone the repo
 - Install the dependencies with `npm install`
 - Start the project with `npm start`
+
+## Testing
+
+To test just write `npm test`
