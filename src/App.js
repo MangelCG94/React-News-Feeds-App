@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
 import NotFound from './Pages/NotFound'
-import Rss from './Pages/Rss'
+import Rss from './Components/Rss'
 
 export default function App() {
 	
