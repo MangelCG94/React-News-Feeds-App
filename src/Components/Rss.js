@@ -29,7 +29,7 @@ export default function Rss() {
 					let date = string_item_date.charAt(0).toUpperCase() + string_item_date.slice(1);
 					return (
 						<>
-							<h3><a href={item.link}>{item.title}</a></h3>
+							<h3><b>{item.title}</b></h3>
 							<div className='date'>{date }</div>
 							<div className='contentNews'>
 								{item.content? item.content.replace( /(<([^>]+)>)/ig, '') : ""}

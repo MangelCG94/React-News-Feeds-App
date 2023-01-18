@@ -9,11 +9,19 @@ body {
 
 button { 
   margin-left: 20px;
+  max-width: fit-content;
+  max-height: min-content;
+  white-space: nowrap;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a, a:link, a:hover, a:visited {
+  text-decoration: none;
+  color: rgb(117, 117, 117);
 }
 
 
@@ -23,8 +31,11 @@ h1 {
   margin-left: 30px;
 }
 
-#root {
-  min-height: 100vh;
+
+
+.clear {
+  clear: both;
+  height: 70px;
 }
 
 .footer-image {
@@ -37,13 +48,29 @@ h1 {
 }
 
 .cards {
+  margin: 0px 10% 0px 10%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
 .card {
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  min-height: 140px;
+}
+
+.card-body {
+  height: 90px;
+  height: inherit;
+  position: relative;
+}
+
+.card-body > button {
+  bottom: 20;
+  left: 20;
+  position: absolute;
+  background-color: #ff0018b8;
+  bottom: 20px;
 }
 
 
@@ -77,16 +104,42 @@ h1 {
 .footer > .container {
   display: flex;
   flex-direction: column;
-
 }
 
 .header > container {
-  
   display: flex;
   justify-content: space-between;
 }
 
-@media only screen and (max-width: 576px) {
+
+
+@media only screen and (max-width: 990px) {
+  
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    margin-left: 3%;;
+  }
+
+    button {
+      margin-top: 10px;
+      white-space: nowrap;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 20px;
+    margin-right: 2%;
+
+    .card {
+      grid-column: 2/3;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
   button {
     //text-size: 14px;
     clear: both;
@@ -94,6 +147,10 @@ h1 {
 
   .cards {
     grid-template-columns: 1fr;
+
+    .card {
+      grid-column: 1/1;
+    }
   }
 
   .create {
@@ -103,14 +160,7 @@ h1 {
 
     button {
       margin-top: 10px;
-      width: 80%;
+      white-space: nowrap;
     }
-  }
-}
-
-@media only screen and (max-width: 920px) {
-  
-  .cards {
-    grid-template-columns: 1fr 1fr;
   }
 }
